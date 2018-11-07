@@ -7,8 +7,9 @@ class Snake(object):
     def __init__(self):
         self.direction_x = 1
         self.direction_y = 0
+        self.alive = True
         self.head = Snakepart(20, 0)
-        self.parts = [Snakepart(21, 0), Snakepart(22, 0), Snakepart(23, 0), Snakepart(24, 0)]
+        self.parts = []
 
     def eat(self ,special=None):
         if special is None:

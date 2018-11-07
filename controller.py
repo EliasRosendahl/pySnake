@@ -11,7 +11,7 @@ class Controller(object):
 
     def run(self):
         self.done = False
-        while not self.done:
+        while not self.done and self.model.snake.alive:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.done = True
