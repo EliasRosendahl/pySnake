@@ -44,7 +44,10 @@ class View(object):
                 self.PIXELSIZE))
 
         # Show score
-        scoreString = "Score: " + str(model.score)
+        if model.snake.alive:
+            scoreString = "Score: " + str(model.score)
+        else:
+            scoreString = "Game over! Score: " + str(model.score)
         scoreText = self.font.render(scoreString, True, (0, 128, 0))
         self.screen.blit(scoreText, (0, 0))
 
