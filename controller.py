@@ -8,11 +8,11 @@ class Controller(object):
         self.clock = pygame.time.Clock()
 
     def run(self):
-        done = False
-        while not done:
+        self.done = False
+        while not self.done:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    done = True
+                    self.done = True
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
@@ -27,5 +27,5 @@ class Controller(object):
             self.model.update()
             self.view.update(self.model)
             self.clock.tick(60)
-            
+
         pygame.quit()
