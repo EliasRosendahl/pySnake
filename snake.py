@@ -17,8 +17,9 @@ class Snake(object):
 
 
     def setDirection(self, x, y):
-        self.direction_x = x
-        self.direction_y = y
+        if self.direction_x + x != 0 or self.direction_y + y != 0:
+            self.direction_x = x
+            self.direction_y = y
 
     def move(self):
         next_x = self.head.x
