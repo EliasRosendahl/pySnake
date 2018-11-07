@@ -5,13 +5,13 @@ class View(object):
     def __init__(self):
         pygame.init()
 
-        size = (720, 480)
-        self.screen = pygame.display.set_mode(size)
-        pygame.display.set_caption("snake")
-
         self.BLACK = (0, 0, 0)
         self.WHITE = (255, 255, 255)
         self.PIXELSIZE = 16
+
+        size = (45 * self.PIXELSIZE, 30 * self.PIXELSIZE)
+        self.screen = pygame.display.set_mode(size)
+        pygame.display.set_caption("snake")
 
     def update(self, model):
         self.screen.fill(self.WHITE)
