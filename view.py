@@ -5,8 +5,10 @@ class View(object):
     def __init__(self):
         pygame.init()
 
+        # Needs better way to store colors
         self.BLACK = (0, 0, 0)
         self.WHITE = (255, 255, 255)
+        self.RED = (255, 0, 0)
         self.PIXELSIZE = 16
 
         size = (45 * self.PIXELSIZE, 30 * self.PIXELSIZE)
@@ -26,6 +28,13 @@ class View(object):
                 part.x * self.PIXELSIZE, 
                 part.y * self.PIXELSIZE, 
                 self.PIXELSIZE, 
+                self.PIXELSIZE))
+
+        for food in model.food:
+            pygame.draw.rect(self.screen, self.RED, pygame.Rect(
+                food.x * self.PIXELSIZE,
+                food.y * self.PIXELSIZE,
+                self.PIXELSIZE,
                 self.PIXELSIZE))
 
         pygame.display.flip()

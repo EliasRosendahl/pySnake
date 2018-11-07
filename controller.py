@@ -6,6 +6,8 @@ class Controller(object):
         self.view = view
         self. model = model
         self.clock = pygame.time.Clock()
+        self.move_delay = 30
+        self.last_move = pygame.time.get_ticks()
 
     def run(self):
         self.done = False
@@ -24,7 +26,9 @@ class Controller(object):
                 elif event.key == pygame.K_DOWN:
                     self.model.snake.setDirection(0, 1)
             
-            self.model.update()
+            if pygame.time.get_ticks() > self.last_move + self.move_delay:
+                self.model.update()
+                self.last_move = pygame.time.get_ticks()
             self.view.update(self.model)
             self.clock.tick(60)
 
