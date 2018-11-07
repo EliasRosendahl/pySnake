@@ -10,9 +10,15 @@ class Snake(object):
         self.head = Snakepart(20, 0)
         self.parts = [Snakepart(21, 0), Snakepart(22, 0), Snakepart(23, 0), Snakepart(24, 0)]
 
+    def eat(self ,special=None):
+        if special is None:
+            self.parts.append(Snakepart(0, 0))
+
+
     def setDirection(self, x, y):
         self.direction_x = x
         self.direction_y = y
+
     def move(self):
         next_x = self.head.x
         next_y = self.head.y

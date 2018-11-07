@@ -6,7 +6,7 @@ class Controller(object):
         self.view = view
         self. model = model
         self.clock = pygame.time.Clock()
-        self.move_delay = 30
+        self.move_delay = 50
         self.last_move = pygame.time.get_ticks()
 
     def run(self):
